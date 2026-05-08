@@ -5,10 +5,10 @@ equals a predefined target.
 """
 
 class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        
+    def twoSum(self, nums: list, target: int):
+
+        for i in range(len(nums)):
+            expected_num = target - nums[i]
+            if expected_num in nums:
+                return [nums[i],expected_num]
+            
