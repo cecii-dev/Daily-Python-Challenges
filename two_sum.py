@@ -7,8 +7,12 @@ equals a predefined target.
 class Solution(object):
     def twoSum(self, nums: list[int], target: int):
 
-        for i in range(len(nums)):
-            expected_num = target - nums[i]
-            if expected_num in nums and nums.index(expected_num) != i:
-                return [i,nums.index(expected_num)]
+        try:
+            for i in range(len(nums)):
+                expected_num = target - nums[i]
+                if expected_num in nums and nums.index(expected_num) != i:
+                    return [i,nums.index(expected_num)]
+        except TypeError:
+            raise TypeError("An error occurred: target and input numbers must be integers.")
+        return []
             
