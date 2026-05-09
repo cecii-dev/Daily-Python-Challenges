@@ -5,10 +5,10 @@ equals a predefined target.
 """
 
 class Solution(object):
-    def twoSum(self, nums: list, target: int):
+    def twoSum(self, nums: list[int], target: int):
 
         for i in range(len(nums)):
             expected_num = target - nums[i]
-            if expected_num in nums and expected_num != nums[i]:
-                return [nums[i],expected_num]
+            if expected_num in nums and nums.index(expected_num) != i:
+                return [i,nums.index(expected_num)]
             
